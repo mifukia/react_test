@@ -10,6 +10,7 @@ const data = [
         text: '*コスナー*',
     }
 ];
+
 const CommentBox = React.createClass({
     render : function(){
         return (
@@ -70,4 +71,12 @@ ReactDOM.render(
     document.getElementById('content_1')
 );
 
-
+//おまけ
+//$(function(){
+//    var aaa = function(){
+//        data.map(function(value){
+//            $('.test').append(`<div>${value.firstname}</div>`)
+//        })
+//    }
+//    aaa();
+//});
