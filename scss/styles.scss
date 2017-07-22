@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "_general";
+@import "_mixin";
+@import "_properties";
+@import "_reset";
+@import "_skrollr";
+
+/*common*/
+@import "_common";
+
+/*pages*/
+#top{
+    @import "pages/page-1";
+}
+

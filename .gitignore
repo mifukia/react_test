@@ -1,0 +1,17 @@
+.viminfo
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.gitconfig
+.htpasswd
+.ssh/
+batch/
+logs/
+tmp/
+
+www/.htaccess
+
+node_modules
+.sass-cache
+style.css.map

@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+body{
+    font-family:$font-family;
+}
+
+img{
+    width:100%;
+    vertical-align:middle;
+}
+a{
+    img{
+        &:hover{
+            opacity:0.8;
+        }
+    }
+}
+.alpha{
+    opacity:1;
+    &:hover{
+        opacity:0.8;
+    }
+}
+.sp{
+    display:block;
+    @include pc{
+        display:none !important;
+    }
+}
+.pc{
+    display:none;
+    @include pc{
+        display:block;
+    }
+}
+.d-none{
+    display:none;
+}
+.d-block{
+    display:block;
+}
+
+.fadeInDown {
+    animation-fill-mode:both;
+    animation-duration:1s;
+    animation-name: fadeInDown;
+    visibility: visible !important;
+}
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

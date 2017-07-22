@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.CommentBox{
+    background: #e8e7e7;
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    h1{
+        font-size: 24px;
+    }
+}
+.CommentList{
+    border: 1px solid #222;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.Comment{
+    margin-bottom: 10px;
+    h2{
+        font-size: 20px;
+        margin-bottom: 0.5em;
+    }
+}
