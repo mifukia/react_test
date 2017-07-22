@@ -1,9 +1,21 @@
+const data = [
+    {
+        id: 1,
+        firstname: 'トム',
+        text: '__クルーズ__',
+    },
+    {
+        id: 2,
+        firstname: 'ケビン',
+        text: '*コスナー*',
+    }
+];
 const CommentBox = React.createClass({
     render : function(){
         return (
             <div className="CommentBox">
                 <h1>コメント</h1>
-                <CommentList />
+                <CommentList data={this.props.data}/>
                 <CommentForm />
             </div>
         );
@@ -12,21 +24,32 @@ const CommentBox = React.createClass({
 
 const CommentList = React.createClass({
     render : function(){
+        const commentNodes = this.props.data.map(function(comment){
+            return (
+                <Comment firstname={comment.firstname} key={comment.id}>
+                {comment.text}
+                </Comment>
+            );
+        });
         return(
             <div className="CommentList">
-                <Comment firstname="トム">クルーズ</Comment>
-                <Comment firstname="ケビン">コスナー</Comment>
+                {commentNodes}
             </div>
         )
     },
 });
 
 const Comment = React.createClass({
+    rawMarkup: function(){
+        var markDown=new Remarkable();
+        var rawMarkup = markDown.render(this.props.children);
+        return {__html:rawMarkup};
+    },
     render : function(){
         return(
             <div className="Comment">
                 <h2>{this.props.firstname}</h2>
-                {this.props.children}
+                <span dangerouslySetInnerHTML= {this.rawMarkup()}/>
             </div>
         )
     },
@@ -43,7 +66,7 @@ const CommentForm = React.createClass({
 });
 
 ReactDOM.render(
-    <CommentBox/>,
+    <CommentBox data={data}/>,
     document.getElementById('content_1')
 );
 
